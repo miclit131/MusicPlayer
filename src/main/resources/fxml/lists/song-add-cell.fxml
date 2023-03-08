@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane fx:id="songAddCell" styleClass="song-cell" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <left>
+        <Label fx:id="icon" styleClass="icon" BorderPane.alignment="CENTER"/>
+    </left>
+    <center>
+        <VBox BorderPane.alignment="CENTER">
+            <Label fx:id="title" styleClass="song-title" text="title"/>
+            <Label fx:id="artist" styleClass="song-artist" text="artist"/>
+        </VBox>
+    </center>
+    <right>
+        <Button fx:id="buttonAdd" styleClass="icon, add"/>
+    </right>
+</BorderPane>

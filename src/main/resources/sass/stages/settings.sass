@@ -1,0 +1,62 @@
+#settings
+  -fx-pref-width: (360px + 24px + 24px)
+
+  .heading
+    -fx-padding: 2px 0 0 12px
+    -fx-font-size: $fz-h4
+    -fx-text-fill: $color-pri
+
+  .app-text
+    -fx-pref-height: 34px
+    -fx-padding: 2px 0 0 12px
+    -fx-text-fill: $color-sec
+
+    &#themeActiveLabel
+      -fx-pref-width: 128px
+
+  .combo-box
+    -fx-min-width: 256px
+    -fx-max-width: 256px
+    -fx-pref-height: 36px
+    -fx-padding: 0 12px
+    -fx-background-color: $bg-color-light
+    -fx-background-radius: $brdz-normal
+
+    .list-cell
+      -fx-padding: 0
+      -fx-text-fill: $color-pri
+
+    .arrow-button
+      -fx-padding: 0 0 0 4px
+
+      .arrow
+        -fx-pref-width: 14px
+        -fx-pref-height: 18px
+        -fx-background-color: $color-qua
+        -fx-shape: "M150 0 L150 0 L0 280 L300 280 M0 370 L300 370 L150 670 L150 670 Z"
+
+    .list-view
+      -fx-padding: 0 12px
+      -fx-background-color: $bg-color-light
+      -fx-background-radius: $brdz-normal
+      -fx-effect: dropshadow(three-pass-box , rgba(0,0,0,0.2) , 8, -2, 0, 2)
+
+      .list-cell
+        -fx-pref-height: 36px
+        -fx-padding: 2px 0 0 0
+        -fx-background-color: transparent
+        -fx-text-fill: $color-sec
+
+        &:hover
+          -fx-text-fill: $color-pri
+
+        &:selected
+          -fx-text-fill: $accent
+
+
+  .library-list-view
+    -fx-padding: 12px 0
+    -fx-background-color: transparent
+
+    .list-cell
+      -fx-background-color: transparent

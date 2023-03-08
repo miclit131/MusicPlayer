@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane fx:id="app" styleClass="stage-root" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hdm_stuttgart.cmpt.core.implementations.ui.UserInterfaceController">
+    <top>
+        <fx:include source="/fxml/window-frame.fxml" />
+    </top>
+    <left>
+        <BorderPane styleClass="col, nav" BorderPane.alignment="CENTER">
+            <top>
+                <Label fx:id="labelLibrary" styleClass="heading" BorderPane.alignment="TOP_LEFT" />
+            </top>
+            <center>
+                <ListView fx:id="navListView" styleClass="nav-list" />
+            </center>
+            <bottom>
+                <ListView fx:id="navBottomListView" styleClass="nav-bottom-list" />
+            </bottom>
+        </BorderPane>
+    </left>
+    <center>
+        <BorderPane fx:id="borderPaneCenter" styleClass="col, view" BorderPane.alignment="CENTER">
+            <top>
+                <VBox BorderPane.alignment="CENTER">
+                    <children>
+                        <BorderPane fx:id="viewHeader">
+                            <center>
+                                <Label fx:id="listTitleActive" styleClass="heading" BorderPane.alignment="TOP_LEFT" />
+                            </center>
+                            <right>
+                                <HBox>
+                                    <HBox fx:id="hBoxSongListOptions">
+                                        <Button fx:id="buttonPlaySongList" styleClass="app-button, transparent">
+                                            <graphic>
+                                                <HBox>
+                                                    <Label fx:id="iconPlaySongList" styleClass="app-icon"/>
+                                                    <Label fx:id="labelPlaySongList"/>
+                                                </HBox>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="buttonShuffleSongList" styleClass="app-button, transparent">
+                                            <graphic>
+                                                <HBox>
+                                                    <Label fx:id="iconShuffleSongList" styleClass="app-icon"/>
+                                                    <Label fx:id="labelShuffleSongList"/>
+                                                </HBox>
+                                            </graphic>
+                                        </Button>
+                                    </HBox>
+                                    <HBox fx:id="hBoxOptionalListViewButtons"></HBox>
+                                </HBox>
+                            </right>
+                        </BorderPane>
+                        <HBox fx:id="groupSortingButtons" styleClass="nav-sec">
+                            <VBox.margin>
+                                <Insets top="6.0" />
+                            </VBox.margin>
+                        </HBox>
+                    </children>
+                </VBox>
+            </top>
+            <bottom>
+                <BorderPane styleClass="col, player" BorderPane.alignment="CENTER">
+                    <left>
+                        <HBox styleClass="info-song">
+                            <Label fx:id="labelSongAlbumPlaceholder" styleClass="app-icon, album" />
+                            <VBox>
+                                <Label fx:id="labelActiveSongTitle" styleClass="heading, title" />
+                                <Label fx:id="labelActiveSongInfo" styleClass="artist" />
+                            </VBox>
+                        </HBox>
+                    </left>
+                    <center>
+                        <BorderPane styleClass="controls-time">
+                            <left>
+                                <Label fx:id="labelActiveSongTimeElapsed" styleClass="time" BorderPane.alignment="CENTER"/>
+                            </left>
+                            <center>
+                                <StackPane>
+                                    <ProgressBar fx:id="progressBarPlayer" />
+                                    <Slider fx:id="sliderPlayer" />
+                                </StackPane>
+                            </center>
+                            <right>
+                                <Label fx:id="labelActiveSongLength" styleClass="time" BorderPane.alignment="CENTER"/>
+                            </right>
+                        </BorderPane>
+                    </center>
+                    <right>
+                        <HBox styleClass="controls-player">
+                            <Button fx:id="buttonShuffle" styleClass="icon" />
+                            <Button fx:id="buttonPrev" styleClass="icon, button-prev" />
+                            <Button fx:id="buttonPlay" styleClass="icon, button-play" />
+                            <Button fx:id="buttonNext" styleClass="icon, button-next" />
+                            <Button fx:id="buttonRepeat" styleClass="icon" />
+                            <Label fx:id="labelRepeat">
+                        <HBox.margin>
+                           <Insets top="12.0" />
+                        </HBox.margin></Label>
+                        </HBox>
+                    </right>
+                </BorderPane>
+            </bottom>
+        </BorderPane>
+    </center>
+</BorderPane>

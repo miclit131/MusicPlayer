@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<BorderPane fx:id="playlistCell" styleClass="playlist-cell" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <Label fx:id="icon" styleClass="icon" BorderPane.alignment="CENTER"/>
+   </left>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="title" styleClass="playlist-title"/>
+            <Label fx:id="amount" styleClass="playlist-amount"/>
+         </children>
+      </VBox>
+   </center>
+   <right>
+      <Label styleClass="icon, open" BorderPane.alignment="CENTER"></Label>
+   </right>
+</BorderPane>

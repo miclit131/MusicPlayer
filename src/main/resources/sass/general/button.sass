@@ -1,0 +1,121 @@
+.app-button
+  -fx-pref-height: 36px
+  -fx-background-color: transparent
+  -fx-background-radius: $brdz-normal
+  -fx-padding: 0 11px
+  -fx-border-width: 1px
+  -fx-border-color: $bg-color-light
+  -fx-border-radius: $brdz-normal
+  -fx-text-fill: $color-pri
+
+  &:focused,
+  &:hover,
+  &:pressed
+    -fx-background-color: $bg-color
+
+  &:pressed
+    -fx-text-fill: $accent
+
+  &.delete,
+  &.accept,
+  &.primary
+    -fx-background-color: transparent
+
+    &:pressed
+      -fx-text-fill: $color-pri
+
+  &.delete
+    -fx-border-color: $red
+
+    &:focused,
+    &:hover
+      -fx-background-color: rgba($red, .1)
+    &:pressed
+      -fx-background-color: rgba($red, .18)
+
+    .app-icon
+      -fx-text-fill: $red
+
+  &.accept
+    -fx-border-color: $blue
+
+    &:focused,
+    &:hover
+      -fx-background-color: rgba($blue, .1)
+    &:pressed
+      -fx-background-color: rgba($blue, .18)
+
+    .app-icon
+      -fx-text-fill: $blue
+
+  &.primary
+    -fx-border-color: $accent
+
+    &:focused,
+    &:hover
+      -fx-background-color: rgba($accent, .1)
+    &:pressed
+      -fx-background-color: rgba($accent, .18)
+
+    .app-icon
+      -fx-text-fill: $accent
+
+  &.transparent
+    -fx-border-color: transparent
+
+    &:focused,
+    &:hover
+      -fx-border-color: $bg-color-light
+
+      Label
+        &.app-icon
+          -fx-text-fill: $color-pri
+
+    &:pressed
+      -fx-border-color: $bg-color-light
+      -fx-background-color: $bg-color-light
+
+      Label
+        &.app-icon
+          -fx-text-fill: $accent
+
+    Label
+      &.app-icon
+        -fx-text-fill: $color-sec
+
+
+  Label
+    -fx-pref-height: 31px
+    -fx-padding: 2px 2px 0 0
+    -fx-text-fill: $color-pri
+
+    &.app-icon
+      -fx-pref-height: 31px
+      -fx-padding: 0 4px 0 0
+
+  &.icon
+    -fx-pref-width: 36px
+    -fx-pref-height: 36px
+    -fx-padding: 0 0 1px 0
+
+.button.app-toggle-button
+  -fx-background-color: transparent
+  -fx-text-fill: $color-tri
+
+  &:hover
+    -fx-text-fill: $color-sec
+
+  &:pressed
+    -fx-text-fill: $color-pri
+
+  &.active
+    -fx-text-fill: rgba($accent, 1)
+
+    &:hover
+      -fx-text-fill: rgba($accent, $white-sec)
+
+    &:pressed
+      -fx-text-fill: rgba($accent, $white-tri)
+
+.app-container-button
+  -fx-padding: 12px

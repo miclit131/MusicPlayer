@@ -1,0 +1,25 @@
+{
+  "name": "gramafon",
+  "version": "1.0.0",
+  "description": "A music player",
+  "main": "de.hdm-stuttgart.cmpt.ctrl.Main",
+  "dependencies": {},
+  "engines": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-js-sample"
+  },
+  "keywords": [],
+  "author": "Patrick Hellebrand",
+  "contributors": [
+    "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-watch": "^5.0.0"
+  }
+}

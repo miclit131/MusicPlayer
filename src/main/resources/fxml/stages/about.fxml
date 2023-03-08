@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane fx:id="about" styleClass="stage-root" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hdm_stuttgart.cmpt.core.implementations.ui.stages.about.AboutController">
+    <top>
+        <fx:include fx:id="windowFrame" source="/fxml/window-frame.fxml" />
+    </top>
+    <center>
+        <VBox>
+            <Label fx:id="appName" />
+            <Label fx:id="version" />
+            <Label fx:id="description" />
+            <ListView fx:id="personListView" />
+        </VBox>
+    </center>
+    <bottom>
+        <HBox styleClass="toolbar">
+            <Hyperlink fx:id="gitlabHyperlink" />
+            <Hyperlink fx:id="felgromHyperlink" />
+         <BorderPane.margin>
+            <Insets top="12.0" />
+         </BorderPane.margin>
+        </HBox>
+    </bottom>
+</BorderPane>

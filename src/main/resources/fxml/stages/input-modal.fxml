@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<BorderPane fx:id="inputModal" styleClass="stage-root" xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hdm_stuttgart.cmpt.core.implementations.ui.stages.modal.InputModalController">
+    <top>
+        <fx:include fx:id="windowFrame" source="/fxml/window-frame.fxml"/>
+    </top>
+    <center>
+        <TextField fx:id="textField" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="12.0" left="12.0" right="12.0"/>
+            </BorderPane.margin>
+        </TextField>
+    </center>
+    <right>
+        <Button fx:id="commitButton" styleClass="app-button, primary" BorderPane.alignment="CENTER">
+            <graphic>
+                <HBox>
+                    <Label fx:id="commitButtonIcon" styleClass="app-icon"/>
+                    <Label fx:id="commitButtonLabel"/>
+                </HBox>
+            </graphic>
+            <BorderPane.margin>
+                <Insets bottom="12.0" right="12.0"/>
+            </BorderPane.margin>
+        </Button>
+    </right>
+</BorderPane>

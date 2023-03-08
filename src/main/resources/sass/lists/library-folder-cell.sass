@@ -1,0 +1,38 @@
+.folder-cell
+  -fx-max-width: (360px + 24px + 24px)
+  -fx-pref-height: 48px
+  -fx-padding: 0 0 0 12px
+  -fx-background-color: transparent
+  -fx-background-radius: 0
+
+  Label
+
+    &.folder-title
+      -fx-padding: 6px 12px 0 0
+      -fx-font-size: $fz-h6
+      -fx-text-fill: $color-pri
+      -fx-text-overrun: ellipsis
+
+    &.folder-location
+      -fx-padding: 0 12px 0 0
+      -fx-font-size: $fz-small
+      -fx-text-fill: $color-sec
+      -fx-text-overrun: center-ellipsis
+
+  .icon
+    -fx-min-height: 48px
+    -fx-padding: 0 12px 0 0
+    -fx-text-fill: $color-tri
+
+    &.remove
+      -fx-min-width: 40px
+      -fx-padding: 4px 0 0 0
+      -fx-background-color: transparent
+      -fx-text-fill: $color-sec
+      -fx-text-alignment: center
+
+      &:hover
+        -fx-text-fill: $color-pri
+
+      &:pressed
+        -fx-text-fill: $accent

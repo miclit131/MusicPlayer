@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane fx:id="settings" styleClass="stage-root" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hdm_stuttgart.cmpt.core.implementations.ui.stages.settings.SettingsController">
+    <top>
+        <fx:include fx:id="windowFrame" source="/fxml/window-frame.fxml" />
+    </top>
+    <center>
+        <VBox>
+            <BorderPane>
+                <top>
+                    <Label fx:id="themeLabel" styleClass="heading" BorderPane.alignment="TOP_LEFT" />
+                </top>
+                <left>
+                    <Label fx:id="themeActiveLabel" styleClass="app-text" />
+                </left>
+                <center>
+                    <ComboBox fx:id="comboBoxTheme" />
+                </center>
+            <VBox.margin>
+               <Insets bottom="12.0" />
+            </VBox.margin>
+            </BorderPane>
+            <BorderPane>
+                <center>
+                    <Label fx:id="libraryLabel" styleClass="heading" BorderPane.alignment="TOP_LEFT" />
+                </center>
+                <right>
+                    <Button fx:id="buttonAddLibrary" styleClass="app-button, transparent">
+                        <graphic>
+                            <HBox>
+                                <Label fx:id="buttonAddIcon" styleClass="app-icon" />
+                                <Label fx:id="buttonAddLabel" />
+                            </HBox>
+                        </graphic>
+                  <BorderPane.margin>
+                     <Insets right="12.0" />
+                  </BorderPane.margin>
+                    </Button>
+                </right>
+                <bottom>
+                    <ListView fx:id="libraryListView" styleClass="library-list-view" />
+                </bottom>
+            </BorderPane>
+        </VBox>
+    </center>
+</BorderPane>

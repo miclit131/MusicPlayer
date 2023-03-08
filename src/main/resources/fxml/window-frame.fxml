@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Polygon?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="de.hdm_stuttgart.cmpt.core.implementations.ui.general.WindowFrameController"
+            fx:id="windowFrame"
+            styleClass="window-frame">
+    <center>
+        <BorderPane fx:id="windowMove" styleClass="window-title" BorderPane.alignment="TOP_LEFT">
+            <center>
+                <Label fx:id="labelWindowTitle" BorderPane.alignment="TOP_LEFT"/>
+            </center>
+            <right>
+                <Polygon fx:id="polygon" BorderPane.alignment="CENTER"/>
+            </right>
+        </BorderPane>
+    </center>
+    <right>
+        <HBox fx:id="windowControls" styleClass="window-controls" BorderPane.alignment="TOP_RIGHT">
+            <Button fx:id="buttonMin">
+                <graphic>
+                    <Label fx:id="labelMin" styleClass="icon"/>
+                </graphic>
+            </Button>
+            <Button fx:id="buttonMax">
+                <graphic>
+                    <Label fx:id="labelMax" styleClass="icon"/>
+                </graphic>
+            </Button>
+            <Button fx:id="buttonClose">
+                <graphic>
+                    <Label fx:id="labelClose" styleClass="icon"/>
+                </graphic>
+            </Button>
+        </HBox>
+    </right>
+    <BorderPane.margin>
+        <Insets bottom="12.0"/>
+    </BorderPane.margin>
+</BorderPane>

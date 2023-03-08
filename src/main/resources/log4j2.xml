@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <File name="MAIN" fileName="logs/main.log" append="false">
+            <PatternLayout pattern="%d{dd.MM.yyyy HH:mm:ss,SSSS} %t %-5p %c{2} - %m%n"/>
+        </File>
+        <File name="File" fileName="logs/app.log" append="false">
+            <PatternLayout pattern="%t %-5p %c{2} - %m%n"/>
+        </File>
+        <File name="TRANSACTIONS" fileName="logs/logged_transactions.log" append="false">
+            <PatternLayout pattern="%d{dd.MM.yyyy HH:mm:ss,SSSS} %t %-5p %c{2} - %m%n"/>
+        </File>
+        <File name="THREADING" fileName="logs/threading.log" append="false">
+            <PatternLayout pattern="%d{dd.MM.yyyy HH:mm:ss,SSSS} %t %-5p %c{2} - %m%n"/>
+        </File>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n"/>
+        </Console>
+    </Appenders>
+    <!--
+    About patterns for PatternLayout:
+    https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html
+    -->
+    <Loggers>
+
+        <!-- You my want to define class or package level per-logger rules -->
+        <Logger name="de.hdm_stuttgart.cmpt" level="debug">
+        </Logger>
+        <Logger name="de.hdm_stuttgart.cmpt.core.implementations.LocalFileManager" level="error">
+            <!-- TODO Change the trace level to info when stable -->
+            <AppenderRef ref="TRANSACTIONS"/>
+        </Logger>
+        <Logger name="THREADING" level="trace">
+            <!-- TODO Change the trace level to warn when stable -->
+            <AppenderRef ref="THREADING" />
+        </Logger>
+        <Logger name="de.hdm_stuttgart.cmpt.core.implementations.MainController" level="trace">
+            <!-- TODO Change the trace level to warn when stable -->
+            <AppenderRef ref="MAIN" />
+        </Logger>
+        <Logger name="de.hdm_stuttgart.cmpt.core.implementations.ui.UserInterfaceController" level="trace">
+            <!-- TODO Change the trace level to warn when stable -->
+        </Logger>
+        <Logger name="de.hdm_stuttgart.cmpt.core.implementations.ui.lists.song.SongCell" level="trace">
+            <!-- TODO Change the trace level to warn when stable -->
+        </Logger>
+        <Root level="debug">
+            <!--
+            <AppenderRef ref="File"/>
+            -->
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuration>

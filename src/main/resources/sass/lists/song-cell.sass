@@ -1,0 +1,33 @@
+.song-cell
+  -fx-padding: 8px 12px
+  -fx-border-style: solid
+  -fx-border-width: 1px 0 0 0
+  -fx-border-color: $divider-color
+
+  &.playing
+    .song-title,
+    .file
+      -fx-text-fill: $accent
+
+  &.first-child
+    -fx-border-width: 0
+
+  >VBox
+    -fx-padding: 0 12px
+
+  .icon
+    -fx-pref-height: 36px
+    -fx-text-fill: $color-sec
+
+  .song-title
+    -fx-padding: 2px 0 0 0
+    -fx-font-size: $fz-h6
+    -fx-text-fill: $color-pri
+
+  .song-artist
+    -fx-font-size: $fz-small
+    -fx-text-fill: $color-sec
+
+  .app-toggle-button
+    -fx-pref-width: 40px
+    -fx-pref-height: 40px

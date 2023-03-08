@@ -1,0 +1,292 @@
+#app
+
+// Button
+
+.button-add
+  -fx-background-color: transparent
+
+  HBox
+    -fx-padding: 0 12px
+
+
+  Label
+    -fx-padding: 4px 0 4px 0
+    -fx-text-fill: $color-pri
+
+  .icon
+    -fx-padding: 0 6px 0 0
+    -fx-text-fill: $color-sec
+
+.col
+
+  .heading
+    -fx-pref-height: 36px
+    -fx-text-fill: $color-pri
+    -fx-font-size: $fz-h4
+
+.nav
+  -fx-pref-width: 192px
+
+  .heading
+    -fx-padding: 0 0 0 12px
+
+  ListView
+    -fx-background-color: transparent
+
+    &.nav-bottom-list
+      -fx-pref-height: 96px
+
+    &.nav-list
+      -fx-padding: 6px 0 0 0
+
+      .list-cell:selected
+
+        .icon
+          -fx-text-fill: $accent
+
+        .nav-title
+          -fx-text-fill: $color-pri
+
+    .list-cell:odd,
+    .list-cell:even
+      -fx-background-color: transparent
+
+    .list-cell:filled:hover
+      .icon
+        -fx-text-fill: $color-sec
+
+      .nav-title
+        -fx-text-fill: $color-pri
+
+.view
+
+  #viewHeader
+    -fx-padding: 0 12px 0 0
+
+  .heading
+    -fx-padding: 0 0 0 11px
+
+  .button-back
+    -fx-pref-height: 34px
+    -fx-padding: 0 0 2px 0
+    -fx-background-color: transparent
+    -fx-text-fill: $color-sec
+
+    &:hover
+      -fx-text-fill: $color-pri
+    &:pressed
+      -fx-text-fill: $accent
+
+  ListView
+    -fx-padding: 12px 0
+    -fx-background-color: transparent
+
+    .scroll-bar
+      -fx-pref-width: 6px
+
+      .track
+        -fx-background-color: $bg-color
+        -fx-background-insets: 0
+        -fx-background-radius: 0
+
+      .thumb
+        -fx-background-color: $bg-color-light
+        -fx-background-insets: 0
+        -fx-background-radius: 0
+
+    .list-cell
+      -fx-background-color: transparent
+
+    .list-cell:filled:hover
+      -fx-background-color: $bg-color-light
+
+.nav-sec
+
+  RadioButton
+    -fx-min-height: 48px
+    -fx-max-height: 48px
+    -fx-padding: 0 12px 0 6px
+    -fx-background-color: transparent
+    -fx-background-radius: 0
+    -fx-text-fill: $color-sec
+    -fx-border-width: 0 0 2px 0
+    -fx-border-color: transparent
+
+    &:selected
+      -fx-text-fill: $color-pri
+      -fx-border-style: solid
+      -fx-border-width: 0 0 2px 0
+      -fx-border-color: $accent !important
+
+    &:hover
+      -fx-text-fill: $color-pri
+      -fx-border-color: $bg-color-light
+
+    .radio
+      -fx-max-width: 0
+      -fx-max-height: 0
+      -fx-padding: 0
+
+      .dot
+        -fx-max-width: 0
+        -fx-max-height: 0
+        -fx-padding: 0
+
+    Label
+      -fx-padding: 0
+      -fx-spacing: 0
+
+// Player
+
+.player
+  -fx-pref-height: 48px
+  -fx-padding: 0 12px 12px 0
+
+  .info-song
+    -fx-max-width: (5 * 48px + 52px)
+
+    .album
+      -fx-min-width: 48px
+      -fx-max-width: 48px
+      -fx-pref-height: 48px
+      -fx-padding: 0 0 1px 0
+      -fx-background-color: $bg-color-light
+      -fx-background-radius: $brdz-normal
+      -fx-text-fill: $color-sec
+      -fx-alignment: center
+
+    VBox
+      -fx-padding: 0 0 0 12px
+
+      .title
+        -fx-pref-height: 26px
+        -fx-padding: 0
+        -fx-font-size: $fz-h6
+
+      .artist
+        -fx-text-fill: $color-sec
+
+.controls-player
+  -fx-pref-width: (5 * 48px + 52px)
+
+  #labelRepeat
+    -fx-pref-width: 52px
+    -fx-pref-height: 24px
+    -fx-text-fill: $color-sec
+    -fx-background-color: $bg-color-light
+    -fx-background-radius: $brdz-normal
+    -fx-alignment: center
+
+    &.inactive
+      -fx-text-fill: $color-tri
+      -fx-background-color: transparent
+
+  Button
+    -fx-pref-width: 48px
+    -fx-pref-height: 48px
+    -fx-padding: 0 0 1px 0
+    -fx-background-color: transparent
+    -fx-text-fill: $color-tri
+    -fx-text-alignment: center
+
+    &:focused,
+    &:hover
+      -fx-text-fill: $color-sec
+    &:pressed
+      -fx-text-fill: $color-pri
+
+    &.active
+      -fx-text-fill: $accent
+
+      &:focused,
+      &:hover
+        -fx-text-fill: $accent
+      &:pressed
+        -fx-text-fill: rgba($accent, $white-sec)
+
+    &.button-prev,
+    &.button-next
+      -fx-text-fill: $color-sec
+
+      &:hover
+        -fx-text-fill: $color-pri
+
+      &:pressed
+        -fx-text-fill: $accent
+
+    &.button-play
+      -fx-border-width: 2px
+      -fx-border-color: $bg-color-light
+      -fx-border-radius: 48px
+      -fx-background-radius: 48px
+      -fx-text-fill: $color-pri
+
+      &:hover
+        -fx-background-color: $bg-color-light
+
+      &:pressed
+        -fx-text-fill: $accent
+
+.controls-time
+  -fx-max-width: (360px + 24px + 24px)
+  -fx-alignment: center
+  -fx-padding: 0 12px 0 24px
+  -fx-pref-height: 48px
+
+  Label
+    -fx-pref-height: 48px
+
+    &.time
+      -fx-padding: 0 0 1px 0
+      -fx-font-family: $ff-mono
+      -fx-text-fill: $color-sec
+
+  StackPane
+    -fx-padding: 0 12px
+
+    .progress-bar,
+    .slider
+      -fx-pref-width: 9999px
+      //-fx-min-width: 160px
+      //-fx-max-width: 160px
+
+    .progress-bar
+      -fx-pref-height: 4px
+      -fx-padding: 0
+      -fx-background-color: $bg-color-light
+      -fx-background-radius: $brdz-normal
+
+      *
+        -fx-background-color: transparent
+
+      .bar
+        -fx-background-color: $accent
+        -fx-background-radius: $brdz-normal
+
+      .track
+        -fx-background-color: $bg-color-light
+        -fx-background-radius: $brdz-normal
+        -fx-text-box-border: transparent
+        -fx-control-inner-background: transparent
+
+    .slider
+      -fx-min-height: 48px
+      -fx-max-height: 48px
+      -fx-padding: 10px 0
+
+      &:pressed .thumb,
+      &:hover .thumb
+        -fx-padding: 4px
+
+      .thumb
+        -fx-background-color: $accent
+        -fx-background-insets: -1
+        -fx-background-radius: $brdz-normal
+        -fx-effect: none
+        -fx-cursor: hand
+
+        &:pressed
+          -fx-background-color: $color-pri
+
+      .track
+        -fx-background-color: transparent

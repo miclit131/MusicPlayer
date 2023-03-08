@@ -1,0 +1,42 @@
+.window-frame
+  -fx-pref-height: 40px
+
+  .window-title
+    -fx-pref-height: 40px
+    -fx-background-color: $bg-color-light
+
+    Label
+      -fx-pref-height: 36px
+      -fx-padding: 4px 0 0 12px
+      -fx-text-fill: $color-sec
+
+  Polygon
+    -fx-fill: $bg-color
+
+  .window-controls
+    -fx-pref-width: (3 * 40px)
+    -fx-alignment: top-right
+
+    &.small
+      -fx-max-width: 40px
+
+    Button
+      -fx-pref-width: 40px
+      -fx-background-color: transparent
+      -fx-text-alignment: center
+
+      &:hover Label
+          -fx-text-fill: $color-pri !important
+
+      &:pressed Label#labelMin
+        -fx-text-fill: $blue !important
+
+      &:pressed Label#labelMax
+        -fx-text-fill: $orange !important
+
+      &:pressed Label#labelClose
+        -fx-text-fill: $red !important
+
+      Label
+        -fx-pref-height: 40px
+        -fx-text-fill: $color-sec !important

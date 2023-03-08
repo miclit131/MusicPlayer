@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane fx:id="playlistEdit" styleClass="stage-root" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hdm_stuttgart.cmpt.core.implementations.ui.stages.playlistEdit.PlaylistEditController">
+    <top>
+        <fx:include fx:id="windowFrame" source="/fxml/window-frame.fxml" />
+    </top>
+    <center>
+        <VBox>
+            <HBox styleClass="header">
+                <Label fx:id="labelHeading" styleClass="heading" BorderPane.alignment="TOP_LEFT" />
+                <Button fx:id="buttonRename" styleClass="app-button, transparent, icon"/>
+            </HBox>
+            <ListView fx:id="listViewSongs"/>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox styleClass="app-container-button">
+            <Button fx:id="buttonSave" styleClass="app-button, primary">
+                <graphic>
+                    <HBox>
+                        <Label fx:id="buttonSaveIcon" styleClass="app-icon"/>
+                        <Label fx:id="buttonSaveLabel"/>
+                    </HBox>
+                </graphic>
+            </Button>
+        </HBox>
+    </bottom>
+</BorderPane>

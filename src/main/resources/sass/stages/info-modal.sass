@@ -1,0 +1,33 @@
+#infoModal
+  -fx-pref-width: 360px
+
+  &.error
+    .app-icon
+      -fx-text-fill: $red
+
+  &.success
+    .app-icon
+      -fx-text-fill: $blue
+
+  #content
+    -fx-padding: 0 12px 12px 12px
+
+    .app-text
+      -fx-wrap-text: true
+
+      &.message
+        -fx-font-size: $fz-h5
+        -fx-text-fill: $color-pri
+
+      &.hint
+        -fx-text-fill: $color-tri
+        -fx-font-size: $fz-small
+
+      &.text
+        -fx-padding: 6px 0
+        -fx-text-fill: $color-sec
+
+  .app-icon
+    -fx-padding: 0 12px 0 0
+    -fx-font-size: 1.5*$ic-size
+    -fx-text-fill: $color-tri

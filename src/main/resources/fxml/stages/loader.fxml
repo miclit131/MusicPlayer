@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane fx:id="loader" styleClass="stage-root" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hdm_stuttgart.cmpt.core.implementations.ui.stages.loader.LoaderController">
+    <top>
+        <fx:include fx:id="windowFrame" source="/fxml/window-frame.fxml" />
+    </top>
+    <center>
+        <VBox styleClass="loading-main">
+            <Label fx:id="labelLoading" styleClass="app-text"/>
+            <ProgressBar fx:id="progressBar" styleClass="progress-bar"/>
+            <Label fx:id="labelContent" styleClass="app-text, content"/>
+        </VBox>
+    </center>
+</BorderPane>

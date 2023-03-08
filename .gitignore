@@ -1,0 +1,33 @@
+/target/
+/.settings/
+.classpath
+.project
+.idea
+node_modules/
+**.key
+**.pem
+# Ignore log files
+**.log
+
+# Ignore any iml file
+**.iml
+
+# CMake
+cmake-build-debug/
+
+## File-based project format:
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+out/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties

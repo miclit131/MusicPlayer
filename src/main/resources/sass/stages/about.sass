@@ -1,0 +1,28 @@
+#about
+  -fx-pref-width: 360px
+
+  Label
+    -fx-text-fill: $color-pri
+
+  VBox
+
+    >Label
+      -fx-padding: 0 12px
+
+    ListView
+      -fx-pref-height: (4 * 48px)
+      -fx-padding: 12px 0 0 0
+      -fx-background-color: transparent
+
+      .list-cell
+        -fx-background-color: transparent
+
+  .toolbar
+    -fx-padding: 0 6px
+    -fx-border-width: 1px 0 0 0
+    -fx-border-color: $bg-color-light
+
+    Hyperlink
+      -fx-padding: 12px 6px
+      -fx-text-fill: $accent
+      -fx-border-width: 0

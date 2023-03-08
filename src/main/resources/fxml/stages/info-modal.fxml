@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane fx:id="infoModal" styleClass="stage-root" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.hdm_stuttgart.cmpt.core.implementations.ui.stages.modal.InfoModalController">
+    <top>
+        <fx:include fx:id="windowFrame" source="/fxml/window-frame.fxml" />
+    </top>
+    <center>
+        <VBox fx:id="content">
+            <Label fx:id="labelMessage" styleClass="app-text, message" />
+            <Label fx:id="labelHint" styleClass="app-text, hint" />
+            <Label fx:id="labelText" styleClass="app-text, text" />
+            <Button fx:id="buttonOk" styleClass="app-button">
+            <VBox.margin>
+               <Insets top="6.0" />
+            </VBox.margin></Button>
+        </VBox>
+    </center>
+    <right>
+        <Label fx:id="labelInfoIcon" styleClass="app-icon" />
+    </right>
+</BorderPane>

@@ -1,0 +1,34 @@
+#loader
+  -fx-pref-width: 360px
+
+  .loading-main
+    -fx-padding: 0 12px 12px 12px
+
+    .app-text
+      -fx-padding: 0 0 12px 0
+      -fx-text-fill: $color-white-sec
+      -fx-font-style: italic
+
+      &.content
+        -fx-padding: 8px 0 0 0
+        -fx-text-fill: $color-white-pri
+        -fx-font-style: normal
+
+
+    .progress-bar
+      -fx-pref-width: (360px - 12px - 12px)
+      -fx-pref-height: 8px
+      -fx-padding: 0
+      -fx-background-color: $bg-color-light
+      -fx-background-radius: $brdz-normal
+
+      *
+        -fx-background-color: transparent
+
+      .bar
+        -fx-background-color: $accent
+        -fx-background-radius: $brdz-normal
+
+      .track
+        -fx-text-box-border: transparent
+        -fx-control-inner-background: transparent

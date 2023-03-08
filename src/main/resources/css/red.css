@@ -1,0 +1,657 @@
+* {
+  -fx-padding: 0;
+  -fx-spacing: 0;
+  -fx-background-insets: 0; }
+
+.stage-root {
+  -fx-background-color: #961717;
+  -fx-font-family: "Overpass", sans-serif;
+  -fx-font-weight: 400;
+  -fx-font-size: 14px; }
+
+Button,
+ToggleButton,
+Hyperlink,
+RadioButton,
+.list-cell {
+  -fx-cursor: hand; }
+
+.icon,
+.app-icon {
+  -fx-font-family: "LineAwesome";
+  -fx-font-size: 22px;
+  -fx-font-weight: normal; }
+
+.window-frame {
+  -fx-pref-height: 40px; }
+  .window-frame .window-title {
+    -fx-pref-height: 40px;
+    -fx-background-color: #b71c1c; }
+    .window-frame .window-title Label {
+      -fx-pref-height: 36px;
+      -fx-padding: 4px 0 0 12px;
+      -fx-text-fill: rgba(255, 255, 255, 0.75); }
+  .window-frame Polygon {
+    -fx-fill: #961717; }
+  .window-frame .window-controls {
+    -fx-pref-width: 120px;
+    -fx-alignment: top-right; }
+    .window-frame .window-controls.small {
+      -fx-max-width: 40px; }
+    .window-frame .window-controls Button {
+      -fx-pref-width: 40px;
+      -fx-background-color: transparent;
+      -fx-text-alignment: center; }
+      .window-frame .window-controls Button:hover Label {
+        -fx-text-fill: white !important; }
+      .window-frame .window-controls Button:pressed Label#labelMin {
+        -fx-text-fill: #03a9f4 !important; }
+      .window-frame .window-controls Button:pressed Label#labelMax {
+        -fx-text-fill: #FF9800 !important; }
+      .window-frame .window-controls Button:pressed Label#labelClose {
+        -fx-text-fill: #ff3b30 !important; }
+      .window-frame .window-controls Button Label {
+        -fx-pref-height: 40px;
+        -fx-text-fill: rgba(255, 255, 255, 0.75) !important; }
+
+.app-button {
+  -fx-pref-height: 36px;
+  -fx-background-color: transparent;
+  -fx-background-radius: 6px;
+  -fx-padding: 0 11px;
+  -fx-border-width: 1px;
+  -fx-border-color: #b71c1c;
+  -fx-border-radius: 6px;
+  -fx-text-fill: white; }
+  .app-button:focused, .app-button:hover, .app-button:pressed {
+    -fx-background-color: #961717; }
+  .app-button:pressed {
+    -fx-text-fill: #ff9500; }
+  .app-button.delete, .app-button.accept, .app-button.primary {
+    -fx-background-color: transparent; }
+    .app-button.delete:pressed, .app-button.accept:pressed, .app-button.primary:pressed {
+      -fx-text-fill: white; }
+  .app-button.delete {
+    -fx-border-color: #ff3b30; }
+    .app-button.delete:focused, .app-button.delete:hover {
+      -fx-background-color: rgba(255, 59, 48, 0.1); }
+    .app-button.delete:pressed {
+      -fx-background-color: rgba(255, 59, 48, 0.18); }
+    .app-button.delete .app-icon {
+      -fx-text-fill: #ff3b30; }
+  .app-button.accept {
+    -fx-border-color: #03a9f4; }
+    .app-button.accept:focused, .app-button.accept:hover {
+      -fx-background-color: rgba(3, 169, 244, 0.1); }
+    .app-button.accept:pressed {
+      -fx-background-color: rgba(3, 169, 244, 0.18); }
+    .app-button.accept .app-icon {
+      -fx-text-fill: #03a9f4; }
+  .app-button.primary {
+    -fx-border-color: #ff9500; }
+    .app-button.primary:focused, .app-button.primary:hover {
+      -fx-background-color: rgba(255, 149, 0, 0.1); }
+    .app-button.primary:pressed {
+      -fx-background-color: rgba(255, 149, 0, 0.18); }
+    .app-button.primary .app-icon {
+      -fx-text-fill: #ff9500; }
+  .app-button.transparent {
+    -fx-border-color: transparent; }
+    .app-button.transparent:focused, .app-button.transparent:hover {
+      -fx-border-color: #b71c1c; }
+      .app-button.transparent:focused Label.app-icon, .app-button.transparent:hover Label.app-icon {
+        -fx-text-fill: white; }
+    .app-button.transparent:pressed {
+      -fx-border-color: #b71c1c;
+      -fx-background-color: #b71c1c; }
+      .app-button.transparent:pressed Label.app-icon {
+        -fx-text-fill: #ff9500; }
+    .app-button.transparent Label.app-icon {
+      -fx-text-fill: rgba(255, 255, 255, 0.75); }
+  .app-button Label {
+    -fx-pref-height: 31px;
+    -fx-padding: 2px 2px 0 0;
+    -fx-text-fill: white; }
+    .app-button Label.app-icon {
+      -fx-pref-height: 31px;
+      -fx-padding: 0 4px 0 0; }
+  .app-button.icon {
+    -fx-pref-width: 36px;
+    -fx-pref-height: 36px;
+    -fx-padding: 0 0 1px 0; }
+
+.button.app-toggle-button {
+  -fx-background-color: transparent;
+  -fx-text-fill: rgba(255, 255, 255, 0.5); }
+  .button.app-toggle-button:hover {
+    -fx-text-fill: rgba(255, 255, 255, 0.75); }
+  .button.app-toggle-button:pressed {
+    -fx-text-fill: white; }
+  .button.app-toggle-button.active {
+    -fx-text-fill: #ff9500; }
+    .button.app-toggle-button.active:hover {
+      -fx-text-fill: rgba(255, 149, 0, 0.75); }
+    .button.app-toggle-button.active:pressed {
+      -fx-text-fill: rgba(255, 149, 0, 0.5); }
+
+.app-container-button {
+  -fx-padding: 12px; }
+
+.folder-cell {
+  -fx-max-width: 408px;
+  -fx-pref-height: 48px;
+  -fx-padding: 0 0 0 12px;
+  -fx-background-color: transparent;
+  -fx-background-radius: 0; }
+  .folder-cell Label.folder-title {
+    -fx-padding: 6px 12px 0 0;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-text-overrun: ellipsis; }
+  .folder-cell Label.folder-location {
+    -fx-padding: 0 12px 0 0;
+    -fx-font-size: 12px;
+    -fx-text-fill: rgba(255, 255, 255, 0.75);
+    -fx-text-overrun: center-ellipsis; }
+  .folder-cell .icon {
+    -fx-min-height: 48px;
+    -fx-padding: 0 12px 0 0;
+    -fx-text-fill: rgba(255, 255, 255, 0.5); }
+    .folder-cell .icon.remove {
+      -fx-min-width: 40px;
+      -fx-padding: 4px 0 0 0;
+      -fx-background-color: transparent;
+      -fx-text-fill: rgba(255, 255, 255, 0.75);
+      -fx-text-alignment: center; }
+      .folder-cell .icon.remove:hover {
+        -fx-text-fill: white; }
+      .folder-cell .icon.remove:pressed {
+        -fx-text-fill: #ff9500; }
+
+.nav-cell {
+  -fx-min-height: 48px;
+  -fx-max-height: 48px;
+  -fx-padding: 0 12px;
+  -fx-background-color: transparent;
+  -fx-background-radius: 0; }
+  .nav-cell Label {
+    -fx-min-height: 48px;
+    -fx-max-height: 48px; }
+    .nav-cell Label.icon {
+      -fx-min-height: 48px;
+      -fx-max-height: 48px;
+      -fx-padding: 0 6px 0 0;
+      -fx-text-fill: rgba(255, 255, 255, 0.5); }
+    .nav-cell Label.nav-title {
+      -fx-padding: 2px 0 0 0;
+      -fx-text-alignment: left;
+      -fx-text-fill: rgba(255, 255, 255, 0.75); }
+
+.person-cell {
+  -fx-pref-height: 48px;
+  -fx-padding: 0 12px;
+  -fx-background-radius: 0; }
+  .person-cell #icon,
+  .person-cell .icon {
+    -fx-text-fill: rgba(255, 255, 255, 0.5);
+    -fx-pref-width: 22px;
+    -fx-font-size: 22px; }
+  .person-cell VBox #name,
+  .person-cell VBox .person-name {
+    -fx-text-fill: white; }
+  .person-cell VBox #position,
+  .person-cell VBox .person-position {
+    -fx-text-fill: rgba(255, 255, 255, 0.75); }
+
+.playlist-cell {
+  -fx-padding: 8px 12px;
+  -fx-border-style: solid;
+  -fx-border-width: 1px 0 0 0;
+  -fx-border-color: #b71c1c; }
+  .playlist-cell.first-child {
+    -fx-border-width: 0; }
+  .playlist-cell VBox {
+    -fx-padding: 0 12px; }
+  .playlist-cell .icon {
+    -fx-pref-height: 36px;
+    -fx-text-fill: rgba(255, 255, 255, 0.75); }
+    .playlist-cell .icon.open {
+      -fx-text-fill: rgba(255, 255, 255, 0.5); }
+  .playlist-cell .playlist-title {
+    -fx-font-size: 16px;
+    -fx-text-fill: white; }
+  .playlist-cell .playlist-amount {
+    -fx-font-size: 12px;
+    -fx-text-fill: rgba(255, 255, 255, 0.75); }
+
+.song-cell {
+  -fx-padding: 8px 12px;
+  -fx-border-style: solid;
+  -fx-border-width: 1px 0 0 0;
+  -fx-border-color: #b71c1c; }
+  .song-cell.playing .song-title,
+  .song-cell.playing .file {
+    -fx-text-fill: #ff9500; }
+  .song-cell.first-child {
+    -fx-border-width: 0; }
+  .song-cell > VBox {
+    -fx-padding: 0 12px; }
+  .song-cell .icon {
+    -fx-pref-height: 36px;
+    -fx-text-fill: rgba(255, 255, 255, 0.75); }
+  .song-cell .song-title {
+    -fx-padding: 2px 0 0 0;
+    -fx-font-size: 16px;
+    -fx-text-fill: white; }
+  .song-cell .song-artist {
+    -fx-font-size: 12px;
+    -fx-text-fill: rgba(255, 255, 255, 0.75); }
+  .song-cell .app-toggle-button {
+    -fx-pref-width: 40px;
+    -fx-pref-height: 40px; }
+
+#about {
+  -fx-pref-width: 360px; }
+  #about Label {
+    -fx-text-fill: white; }
+  #about VBox > Label {
+    -fx-padding: 0 12px; }
+  #about VBox ListView {
+    -fx-pref-height: 192px;
+    -fx-padding: 12px 0 0 0;
+    -fx-background-color: transparent; }
+    #about VBox ListView .list-cell {
+      -fx-background-color: transparent; }
+  #about .toolbar {
+    -fx-padding: 0 6px;
+    -fx-border-width: 1px 0 0 0;
+    -fx-border-color: #b71c1c; }
+    #about .toolbar Hyperlink {
+      -fx-padding: 12px 6px;
+      -fx-text-fill: #ff9500;
+      -fx-border-width: 0; }
+
+.button-add {
+  -fx-background-color: transparent; }
+  .button-add HBox {
+    -fx-padding: 0 12px; }
+  .button-add Label {
+    -fx-padding: 4px 0 4px 0;
+    -fx-text-fill: white; }
+  .button-add .icon {
+    -fx-padding: 0 6px 0 0;
+    -fx-text-fill: rgba(255, 255, 255, 0.75); }
+
+.col .heading {
+  -fx-pref-height: 36px;
+  -fx-text-fill: white;
+  -fx-font-size: 24px; }
+
+.nav {
+  -fx-pref-width: 192px; }
+  .nav .heading {
+    -fx-padding: 0 0 0 12px; }
+  .nav ListView {
+    -fx-background-color: transparent; }
+    .nav ListView.nav-bottom-list {
+      -fx-pref-height: 96px; }
+    .nav ListView.nav-list {
+      -fx-padding: 6px 0 0 0; }
+      .nav ListView.nav-list .list-cell:selected .icon {
+        -fx-text-fill: #ff9500; }
+      .nav ListView.nav-list .list-cell:selected .nav-title {
+        -fx-text-fill: white; }
+    .nav ListView .list-cell:odd,
+    .nav ListView .list-cell:even {
+      -fx-background-color: transparent; }
+    .nav ListView .list-cell:filled:hover .icon {
+      -fx-text-fill: rgba(255, 255, 255, 0.75); }
+    .nav ListView .list-cell:filled:hover .nav-title {
+      -fx-text-fill: white; }
+
+.view #viewHeader {
+  -fx-padding: 0 12px 0 0; }
+
+.view .heading {
+  -fx-padding: 0 0 0 11px; }
+
+.view .button-back {
+  -fx-pref-height: 34px;
+  -fx-padding: 0 0 2px 0;
+  -fx-background-color: transparent;
+  -fx-text-fill: rgba(255, 255, 255, 0.75); }
+  .view .button-back:hover {
+    -fx-text-fill: white; }
+  .view .button-back:pressed {
+    -fx-text-fill: #ff9500; }
+
+.view ListView {
+  -fx-padding: 12px 0;
+  -fx-background-color: transparent; }
+  .view ListView .scroll-bar {
+    -fx-pref-width: 6px; }
+    .view ListView .scroll-bar .track {
+      -fx-background-color: #961717;
+      -fx-background-insets: 0;
+      -fx-background-radius: 0; }
+    .view ListView .scroll-bar .thumb {
+      -fx-background-color: #b71c1c;
+      -fx-background-insets: 0;
+      -fx-background-radius: 0; }
+  .view ListView .list-cell {
+    -fx-background-color: transparent; }
+  .view ListView .list-cell:filled:hover {
+    -fx-background-color: #b71c1c; }
+
+.nav-sec RadioButton {
+  -fx-min-height: 48px;
+  -fx-max-height: 48px;
+  -fx-padding: 0 12px 0 6px;
+  -fx-background-color: transparent;
+  -fx-background-radius: 0;
+  -fx-text-fill: rgba(255, 255, 255, 0.75);
+  -fx-border-width: 0 0 2px 0;
+  -fx-border-color: transparent; }
+  .nav-sec RadioButton:selected {
+    -fx-text-fill: white;
+    -fx-border-style: solid;
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: #ff9500 !important; }
+  .nav-sec RadioButton:hover {
+    -fx-text-fill: white;
+    -fx-border-color: #b71c1c; }
+  .nav-sec RadioButton .radio {
+    -fx-max-width: 0;
+    -fx-max-height: 0;
+    -fx-padding: 0; }
+    .nav-sec RadioButton .radio .dot {
+      -fx-max-width: 0;
+      -fx-max-height: 0;
+      -fx-padding: 0; }
+  .nav-sec RadioButton Label {
+    -fx-padding: 0;
+    -fx-spacing: 0; }
+
+.player {
+  -fx-pref-height: 48px;
+  -fx-padding: 0 12px 12px 0; }
+  .player .info-song {
+    -fx-max-width: 292px; }
+    .player .info-song .album {
+      -fx-min-width: 48px;
+      -fx-max-width: 48px;
+      -fx-pref-height: 48px;
+      -fx-padding: 0 0 1px 0;
+      -fx-background-color: #b71c1c;
+      -fx-background-radius: 6px;
+      -fx-text-fill: rgba(255, 255, 255, 0.75);
+      -fx-alignment: center; }
+    .player .info-song VBox {
+      -fx-padding: 0 0 0 12px; }
+      .player .info-song VBox .title {
+        -fx-pref-height: 26px;
+        -fx-padding: 0;
+        -fx-font-size: 16px; }
+      .player .info-song VBox .artist {
+        -fx-text-fill: rgba(255, 255, 255, 0.75); }
+
+.controls-player {
+  -fx-pref-width: 292px; }
+  .controls-player #labelRepeat {
+    -fx-pref-width: 52px;
+    -fx-pref-height: 24px;
+    -fx-text-fill: rgba(255, 255, 255, 0.75);
+    -fx-background-color: #b71c1c;
+    -fx-background-radius: 6px;
+    -fx-alignment: center; }
+    .controls-player #labelRepeat.inactive {
+      -fx-text-fill: rgba(255, 255, 255, 0.5);
+      -fx-background-color: transparent; }
+  .controls-player Button {
+    -fx-pref-width: 48px;
+    -fx-pref-height: 48px;
+    -fx-padding: 0 0 1px 0;
+    -fx-background-color: transparent;
+    -fx-text-fill: rgba(255, 255, 255, 0.5);
+    -fx-text-alignment: center; }
+    .controls-player Button:focused, .controls-player Button:hover {
+      -fx-text-fill: rgba(255, 255, 255, 0.75); }
+    .controls-player Button:pressed {
+      -fx-text-fill: white; }
+    .controls-player Button.active {
+      -fx-text-fill: #ff9500; }
+      .controls-player Button.active:focused, .controls-player Button.active:hover {
+        -fx-text-fill: #ff9500; }
+      .controls-player Button.active:pressed {
+        -fx-text-fill: rgba(255, 149, 0, 0.75); }
+    .controls-player Button.button-prev, .controls-player Button.button-next {
+      -fx-text-fill: rgba(255, 255, 255, 0.75); }
+      .controls-player Button.button-prev:hover, .controls-player Button.button-next:hover {
+        -fx-text-fill: white; }
+      .controls-player Button.button-prev:pressed, .controls-player Button.button-next:pressed {
+        -fx-text-fill: #ff9500; }
+    .controls-player Button.button-play {
+      -fx-border-width: 2px;
+      -fx-border-color: #b71c1c;
+      -fx-border-radius: 48px;
+      -fx-background-radius: 48px;
+      -fx-text-fill: white; }
+      .controls-player Button.button-play:hover {
+        -fx-background-color: #b71c1c; }
+      .controls-player Button.button-play:pressed {
+        -fx-text-fill: #ff9500; }
+
+.controls-time {
+  -fx-max-width: 408px;
+  -fx-alignment: center;
+  -fx-padding: 0 12px 0 24px;
+  -fx-pref-height: 48px; }
+  .controls-time Label {
+    -fx-pref-height: 48px; }
+    .controls-time Label.time {
+      -fx-padding: 0 0 1px 0;
+      -fx-font-family: "Overpass Mono", monospace;
+      -fx-text-fill: rgba(255, 255, 255, 0.75); }
+  .controls-time StackPane {
+    -fx-padding: 0 12px; }
+    .controls-time StackPane .progress-bar,
+    .controls-time StackPane .slider {
+      -fx-pref-width: 9999px; }
+    .controls-time StackPane .progress-bar {
+      -fx-pref-height: 4px;
+      -fx-padding: 0;
+      -fx-background-color: #b71c1c;
+      -fx-background-radius: 6px; }
+      .controls-time StackPane .progress-bar * {
+        -fx-background-color: transparent; }
+      .controls-time StackPane .progress-bar .bar {
+        -fx-background-color: #ff9500;
+        -fx-background-radius: 6px; }
+      .controls-time StackPane .progress-bar .track {
+        -fx-background-color: #b71c1c;
+        -fx-background-radius: 6px;
+        -fx-text-box-border: transparent;
+        -fx-control-inner-background: transparent; }
+    .controls-time StackPane .slider {
+      -fx-min-height: 48px;
+      -fx-max-height: 48px;
+      -fx-padding: 10px 0; }
+      .controls-time StackPane .slider:pressed .thumb,
+      .controls-time StackPane .slider:hover .thumb {
+        -fx-padding: 4px; }
+      .controls-time StackPane .slider .thumb {
+        -fx-background-color: #ff9500;
+        -fx-background-insets: -1;
+        -fx-background-radius: 6px;
+        -fx-effect: none;
+        -fx-cursor: hand; }
+        .controls-time StackPane .slider .thumb:pressed {
+          -fx-background-color: white; }
+      .controls-time StackPane .slider .track {
+        -fx-background-color: transparent; }
+
+#confirmModal {
+  -fx-pref-width: 360px; }
+  #confirmModal .app-text {
+    -fx-padding: 0 12px;
+    -fx-text-fill: white;
+    -fx-text-overrun: leading-ellipsis; }
+    #confirmModal .app-text.question {
+      -fx-font-size: 12px;
+      -fx-text-fill: rgba(255, 255, 255, 0.75); }
+    #confirmModal .app-text.action {
+      -fx-font-size: 20px; }
+
+#infoModal {
+  -fx-pref-width: 360px; }
+  #infoModal.error .app-icon {
+    -fx-text-fill: #ff3b30; }
+  #infoModal.success .app-icon {
+    -fx-text-fill: #03a9f4; }
+  #infoModal #content {
+    -fx-padding: 0 12px 12px 12px; }
+    #infoModal #content .app-text {
+      -fx-wrap-text: true; }
+      #infoModal #content .app-text.message {
+        -fx-font-size: 20px;
+        -fx-text-fill: white; }
+      #infoModal #content .app-text.hint {
+        -fx-text-fill: rgba(255, 255, 255, 0.5);
+        -fx-font-size: 12px; }
+      #infoModal #content .app-text.text {
+        -fx-padding: 6px 0;
+        -fx-text-fill: rgba(255, 255, 255, 0.75); }
+  #infoModal .app-icon {
+    -fx-padding: 0 12px 0 0;
+    -fx-font-size: 33px;
+    -fx-text-fill: rgba(255, 255, 255, 0.5); }
+
+#inputModal TextField {
+  -fx-background-color: transparent;
+  -fx-pref-width: 192px;
+  -fx-min-height: 36px;
+  -fx-max-height: 36px;
+  -fx-padding: 0 12px;
+  -fx-border-width: 1px;
+  -fx-border-color: rgba(255, 255, 255, 0.5);
+  -fx-border-radius: 6px;
+  -fx-text-fill: white; }
+
+#inputModal .button-primary {
+  -fx-min-height: 36px;
+  -fx-max-height: 36px;
+  -fx-padding: 0 12px;
+  -fx-background-color: rgba(255, 149, 0, 0.1);
+  -fx-background-radius: 6px; }
+  #inputModal .button-primary .modal-label {
+    -fx-min-height: 32px;
+    -fx-padding: 4px 0 0 0;
+    -fx-text-fill: #ff9500; }
+  #inputModal .button-primary .icon {
+    -fx-min-height: 34px;
+    -fx-padding: 0 4px 0 0;
+    -fx-text-fill: #ff9500; }
+
+#loader {
+  -fx-pref-width: 360px; }
+  #loader .loading-main {
+    -fx-padding: 0 12px 12px 12px; }
+    #loader .loading-main .app-text {
+      -fx-padding: 0 0 12px 0;
+      -fx-text-fill: rgba(255, 255, 255, 0.75);
+      -fx-font-style: italic; }
+      #loader .loading-main .app-text.content {
+        -fx-padding: 8px 0 0 0;
+        -fx-text-fill: white;
+        -fx-font-style: normal; }
+    #loader .loading-main .progress-bar {
+      -fx-pref-width: 336px;
+      -fx-pref-height: 8px;
+      -fx-padding: 0;
+      -fx-background-color: #b71c1c;
+      -fx-background-radius: 6px; }
+      #loader .loading-main .progress-bar * {
+        -fx-background-color: transparent; }
+      #loader .loading-main .progress-bar .bar {
+        -fx-background-color: #ff9500;
+        -fx-background-radius: 6px; }
+      #loader .loading-main .progress-bar .track {
+        -fx-text-box-border: transparent;
+        -fx-control-inner-background: transparent; }
+
+#settings {
+  -fx-pref-width: 408px; }
+  #settings .heading {
+    -fx-padding: 2px 0 0 12px;
+    -fx-font-size: 24px;
+    -fx-text-fill: white; }
+  #settings .app-text {
+    -fx-pref-height: 34px;
+    -fx-padding: 2px 0 0 12px;
+    -fx-text-fill: rgba(255, 255, 255, 0.75); }
+    #settings .app-text#themeActiveLabel {
+      -fx-pref-width: 128px; }
+  #settings .combo-box {
+    -fx-min-width: 256px;
+    -fx-max-width: 256px;
+    -fx-pref-height: 36px;
+    -fx-padding: 0 12px;
+    -fx-background-color: #b71c1c;
+    -fx-background-radius: 6px; }
+    #settings .combo-box .list-cell {
+      -fx-padding: 0;
+      -fx-text-fill: white; }
+    #settings .combo-box .arrow-button {
+      -fx-padding: 0 0 0 4px; }
+      #settings .combo-box .arrow-button .arrow {
+        -fx-pref-width: 14px;
+        -fx-pref-height: 18px;
+        -fx-background-color: rgba(255, 255, 255, 0.25);
+        -fx-shape: "M150 0 L150 0 L0 280 L300 280 M0 370 L300 370 L150 670 L150 670 Z"; }
+    #settings .combo-box .list-view {
+      -fx-padding: 0 12px;
+      -fx-background-color: #b71c1c;
+      -fx-background-radius: 6px;
+      -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 8, -2, 0, 2); }
+      #settings .combo-box .list-view .list-cell {
+        -fx-pref-height: 36px;
+        -fx-padding: 2px 0 0 0;
+        -fx-background-color: transparent;
+        -fx-text-fill: rgba(255, 255, 255, 0.75); }
+        #settings .combo-box .list-view .list-cell:hover {
+          -fx-text-fill: white; }
+        #settings .combo-box .list-view .list-cell:selected {
+          -fx-text-fill: #ff9500; }
+  #settings .library-list-view {
+    -fx-padding: 12px 0;
+    -fx-background-color: transparent; }
+    #settings .library-list-view .list-cell {
+      -fx-background-color: transparent; }
+
+#playlistEdit {
+  -fx-pref-width: 408px; }
+  #playlistEdit .header {
+    -fx-max-width: 408px;
+    -fx-padding: 0 0 8px 0; }
+    #playlistEdit .header .heading {
+      -fx-max-width: 360px;
+      -fx-pref-height: 34px;
+      -fx-padding: 2px 8px 0 12px;
+      -fx-font-size: 24px;
+      -fx-text-fill: white; }
+  #playlistEdit ListView {
+    -fx-background-color: transparent; }
+    #playlistEdit ListView .scroll-bar {
+      -fx-pref-width: 6px; }
+      #playlistEdit ListView .scroll-bar .track {
+        -fx-background-color: #961717;
+        -fx-background-insets: 0;
+        -fx-background-radius: 0; }
+      #playlistEdit ListView .scroll-bar .thumb {
+        -fx-background-color: #b71c1c;
+        -fx-background-insets: 0;
+        -fx-background-radius: 0; }
+    #playlistEdit ListView .list-cell {
+      -fx-background-color: transparent; }
+  #playlistEdit ListView .list-cell .song-cell {
+    -fx-max-width: 402px; }

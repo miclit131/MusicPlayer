@@ -1,0 +1,21 @@
+@import ../variables
+
+$bg-color: $grey-050
+$bg-color-light: $grey-200
+$divider-color: $grey-200
+
+$color-pri: $color-black-pri
+$color-sec: $color-black-sec
+$color-tri: $color-black-tri
+$color-qua: $color-black-qua
+
+@import imports
+
+// corrections
+
+#settings .combo-box .list-view
+  -fx-background-color: $grey-000
+  -fx-effect: dropshadow(three-pass-box , rgba(0,0,0,0.12) , 6, -2, 0, 2)
+
+.controls-time StackPane .slider .thumb:pressed
+  -fx-background-color: $grey-800

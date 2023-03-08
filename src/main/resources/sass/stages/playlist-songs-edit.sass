@@ -1,0 +1,35 @@
+#playlistEdit
+  -fx-pref-width: (360px + 24px + 24px)
+
+  .header
+    -fx-max-width: (360px + 24px + 24px)
+    -fx-padding: 0 0 8px 0
+
+    .heading
+      -fx-max-width: (360px + 24px + 24px - 36px - 12px)
+      -fx-pref-height: 34px
+      -fx-padding: 2px 8px 0 12px
+      -fx-font-size: $fz-h4
+      -fx-text-fill: $color-pri
+
+  ListView
+    -fx-background-color: transparent
+
+    .scroll-bar
+      -fx-pref-width: 6px
+
+      .track
+        -fx-background-color: $bg-color
+        -fx-background-insets: 0
+        -fx-background-radius: 0
+
+      .thumb
+        -fx-background-color: $bg-color-light
+        -fx-background-insets: 0
+        -fx-background-radius: 0
+
+    .list-cell
+      -fx-background-color: transparent
+
+  ListView .list-cell .song-cell
+    -fx-max-width: (360px + 24px + 24px - 6px)
